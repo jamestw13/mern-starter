@@ -18,9 +18,11 @@ MongoDB installed
 
 ## To Use
 - Clone repo
-- Run npm i from repo's root directory. Sub directory npms should run automatically
-- Add a .env file to the server directory and add lines: 
-ACCESS_TOKEN_SECRET=### your custom access token secret here ### and 
-REFRESH_TOKEN_SECRET=### your custom refresh token secret here ###
-- Run npm run develop from repo's root directory. Auth and business servers should run in nodemon and React should start up
+- Run ```npm i``` from repo's root directory. Sub directory npms should run automatically
+- Add a .env file to the server directory and add the following lines: 
+```
+ACCESS_TOKEN_SECRET=<your custom access token secret here>
+REFRESH_TOKEN_SECRET=<your custom refresh token secret here>
+```
+- Run ```npm run develop``` from repo's root directory. Auth and business servers should run via nodemon and React should start up
 - Happy developing!
