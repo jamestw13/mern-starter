@@ -1,5 +1,5 @@
 # mern-starter
-A starting point for building a MERN app
+A starting point for building a MERN app with user authentication
 
 ## Functionality Added and Planned
 - [x] React Starting Template
