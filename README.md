@@ -9,10 +9,10 @@ A starting point for building a MERN app with user authentication
 - [x] JSON Web Token Authentication Set Up
 - [x] Separate Servers for general data access and authentication
 - [x] nodemon and concurrently added for smooth development
-- [ ] MongoDB connection started
-- [ ] Mongoose handling
-- [ ] GraphQL functionality
-- [ ] Seeding user data from faker for testing
+- [x] MongoDB connection started
+- [x] Mongoose handling
+- [x] GraphQL functionality
+- [x] Seeding user data from falso for testing
 
 ## Requires
 
