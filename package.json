@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
-    "installall": "concurrently \"npm i\" \"cd client && npm i\" \"cd server && npm i\""
+    "installall": "concurrently \"npm i\" \"cd client && npm i\" \"cd server && npm i\"",
+    "seed": "node server/seeders/seeds.js"
   },
   "repository": {
     "type": "git",

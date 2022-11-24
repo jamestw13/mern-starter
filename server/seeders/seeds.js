@@ -1,24 +1,31 @@
-const falso = require("@ngneat/falso");
+const falso = require('@ngneat/falso');
 
-const db = require("../config/connection");
-const { User } = require("../models");
+const db = require('../config/connection');
+const { User } = require('../models');
 
-db.once("open", async () => {
+db.once('open', async () => {
   await User.deleteMany({});
 
   // create user data
   const userData = [];
 
   for (let i = 0; i < 50; i += 1) {
-    const username = falso.internet.userName();
-    const email = falso.internet.email(username);
-    const password = falso.internet.password();
+    const userInfo = falso.randUser();
 
-    userData.push({ username, email, password });
+    const user = {
+      username: userInfo.username,
+      email: userInfo.email,
+      firstName: userInfo.firstName,
+      lastName: userInfo.lastName,
+      password: 11111111,
+      avatar: falso.randAvatar(),
+    };
+
+    userData.push(user);
   }
 
   const createdUsers = await User.collection.insertMany(userData);
 
-  console.log("Finished Seeding");
+  console.log('Finished Seeding');
   process.exit(0);
 });
