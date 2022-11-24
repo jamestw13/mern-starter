@@ -1,42 +1,41 @@
-# mern-starter
+# MERN Starter
 
-A starting point for building a MERN app with user authentication
+A starter template for building a MERN app
 
 ## Functionality Added and Planned
 
 - [x] React Starting Template
 - [x] Express Server Set Up
-- [x] JSON Web Token Authentication Set Up
+- [ ] JSON Web Token Authentication Set Up
 - [x] Separate Servers for general data access and authentication
 - [x] nodemon and concurrently added for smooth development
 - [x] MongoDB connection started
 - [x] Mongoose handling
 - [x] GraphQL functionality
-- [x] Seeding user data from falso for testing
+- [x] Seeding test user data
 
 ## Requires
 
-Node installed MongoDB installed
+ - Node 
+ - MongoDB
+ - Docker
 
-## To Use
+## Getting Started
 
 - Clone repo
-- Run `npm i` from repo's root directory. Sub directory npms should run automatically
-- Add a .env file to the server directory and add the following lines:
+- Run `npm i` from repo's root directory.
+- Run `npm run installall` from repo's root directory to install server and client dependencies
 
-```
-ACCESS_TOKEN_SECRET=<your custom access token secret here>
-REFRESH_TOKEN_SECRET=<your custom refresh token secret here>
-```
-
-- - A handy way to create secrets is by running the following in the terminal:
-
-```
-node
-require('crypto').randomBytes(64).toString('hex')
-```
-
-and pasting
-
-- Run `npm run develop` from repo's root directory. Auth and business servers should run via nodemon and React should start up
+- Add a .env file and add the following lines: 
+  ```
+  ACCESS_TOKEN_SECRET=<your custom access token secret here>
+  REFRESH_TOKEN_SECRET=<your custom refresh token secret here>
+  ```
+  - A handy way to create secrets is by running the following in the terminal:
+  ```
+  node
+  require('crypto').randomBytes(64).toString('hex')
+  ```
+- (optional) Run `npm run seed` from repo's root directory to generate test users
+- Run `npm run develop` from repo's root directory to start server and client via nodemon
 - Happy developing!
