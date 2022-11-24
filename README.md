@@ -38,4 +38,5 @@ A starter template for building a MERN app
   ```
 - (optional) Run `npm run seed` from repo's root directory to generate test users
 - Run `npm run develop` from repo's root directory to start server and client via nodemon
+- Search for all instances of ___*** UPDATE ME ***___ to begin customizing your app name
 - Happy developing!
