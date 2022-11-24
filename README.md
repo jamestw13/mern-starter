@@ -26,7 +26,7 @@ A starter template for building a MERN app
 - Run `npm i` from repo's root directory.
 - Run `npm run installall` from repo's root directory to install server and client dependencies
 
-- Add a .env file and add the following lines: 
+- Add a .env file in the /server director and add the following lines: 
   ```
   ACCESS_TOKEN_SECRET=<your custom access token secret here>
   REFRESH_TOKEN_SECRET=<your custom refresh token secret here>
