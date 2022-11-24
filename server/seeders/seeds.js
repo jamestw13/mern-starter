@@ -1,9 +1,9 @@
-const falso = require('@ngneat/falso');
+const falso = require("@ngneat/falso");
 
-const db = require('../config/connection');
-const { User } = require('../models');
+const db = require("../config/connection");
+const { User } = require("../models");
 
-db.once('open', async () => {
+db.once("open", async () => {
   await User.deleteMany({});
 
   // create user data
@@ -24,8 +24,8 @@ db.once('open', async () => {
     userData.push(user);
   }
 
-  const createdUsers = await User.collection.insertMany(userData);
+  const createdUsers = await User.create(userData);
 
-  console.log('Finished Seeding');
+  console.log("Finished Seeding");
   process.exit(0);
 });

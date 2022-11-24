@@ -10,10 +10,31 @@ const userSchema = new Schema(
       trim: true,
     },
 
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      trim: true,
+    },
+
+    firstName: {
+      type: String,
+      trim: true,
+    },
+
+    lastName: {
+      type: String,
+      trim: true,
+    },
+
     password: {
       type: String,
       required: true,
       minlength: 5,
+    },
+
+    avatar: {
+      type: String,
     },
   },
   {
