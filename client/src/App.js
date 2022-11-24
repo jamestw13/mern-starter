@@ -1,32 +1,27 @@
-import React from "react";
-import {
-  ApolloProvider,
-  ApolloClient,
-  InMemoryCache,
-  createHttpLink,
-} from "@apollo/client";
-import { setContext } from "@apollo/client/link/context";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React from 'react';
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Login from "./pages/Login";
-import NoMatch from "./pages/NoMatch";
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Login from './pages/Login';
+import NoMatch from './pages/NoMatch';
 
-import Signup from "./pages/Signup";
+import Signup from './pages/Signup';
 
-import Home from "./pages/Home";
+import Home from './pages/Home';
 
 const httpLink = createHttpLink({
-  uri: "/graphql",
+  uri: '/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem("id_token");
+  const token = localStorage.getItem('id_token');
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : "",
+      authorization: token ? `Bearer ${token}` : '',
     },
   };
 });
@@ -43,13 +38,13 @@ function App() {
         <div>
           <Header />
           <div>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/signup" component={Signup} />
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route exact path="/login" element={<Login />} />
+              <Route exact path="/signup" element={<Signup />} />
 
-              <Route component={NoMatch} />
-            </Switch>
+              <Route element={<NoMatch />} />
+            </Routes>
           </div>
           <Footer />
         </div>
