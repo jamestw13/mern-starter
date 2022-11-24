@@ -6,8 +6,7 @@ A starter template for building a MERN app
 
 - [x] React Starting Template
 - [x] Express Server Set Up
-- [ ] JSON Web Token Authentication Set Up
-- [x] Separate Servers for general data access and authentication
+- [x] JSON Web Token Authentication Set Up
 - [x] nodemon and concurrently added for smooth development
 - [x] MongoDB connection started
 - [x] Mongoose handling
