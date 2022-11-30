@@ -42,7 +42,7 @@ A starter template for building a MERN app
 
 
 ## Docker
-To run compose, execute entry-compose.sh with all of the variables in the docker-compose.yml set
+To run compose, execute entry-compose.sh with all of the variables in the docker-compose.yml set in a .env file or as shell variables
 
 To run the database individually with ports to host networking:
 ```
