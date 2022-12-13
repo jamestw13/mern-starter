@@ -13,7 +13,4 @@ COPY . .
 
 USER 1000:1000
 
-EXPOSE 3001
-EXPOSE 27017
-ENV PORT=3001
 CMD [ "node","server.js" ]

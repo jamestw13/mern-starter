@@ -23,5 +23,9 @@ services:
             - mern-backend
         ports:
             - ${NGINX_PORT}:${NGINX_PORT}
+
+        environment:
+            - PORT=${NGINX_PORT}
+            - BACKEND=${BACKEND}
         build:
             context: ./client

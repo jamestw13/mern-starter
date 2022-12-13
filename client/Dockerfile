@@ -9,6 +9,8 @@ RUN npm run build
 
 FROM nginx:alpine
 
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx-default.conf.template /etc/nginx/conf.d/default.conf.template
 COPY --from=build /frontend/build /usr/share/nginx/html
-EXPOSE 80
+COPY docker-entrypoint.sh /
+
+CMD ["nginx", "-g", "daemon off;"]
