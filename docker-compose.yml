@@ -1,0 +1,31 @@
+services:
+    mongo-db:
+        ports:
+            - 27017:27017
+        environment:
+            - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT}
+            - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
+
+        image: mongo
+    mern-backend:
+        depends_on:
+            - mongo-db
+        ports:
+            - 3001:3001
+        environment:
+            - ACCESS_TOKEN_SECRET=${ACCESS_TOKEN_SECRET}
+            - MONGODB_URI=${MONGODB_URI}
+        build:
+            context: ./server
+
+    mern-frontend:
+        depends_on:
+            - mern-backend
+        ports:
+            - ${NGINX_PORT}:${NGINX_PORT}
+
+        environment:
+            - PORT=${NGINX_PORT}
+            - BACKEND=${BACKEND}
+        build:
+            context: ./client

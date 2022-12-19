@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
-
+const connect_string = process.env.MONGODB_URI || "PLEASEBREAKHERE";
+console.log(connect_string);
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/mern-starter",
+  connect_string,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
